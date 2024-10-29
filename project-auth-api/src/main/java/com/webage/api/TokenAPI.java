@@ -41,6 +41,7 @@ public class TokenAPI {
 		if (username != null && username.length() > 0 && password != null && password.length() > 0 && checkPassword(username, password)) {
 			Token token = createToken(username);
 			ResponseEntity<?> response = ResponseEntity.ok(token);
+			System.out.println("user found");
 			return response;			
 		}
 		// bad request
@@ -53,7 +54,7 @@ public class TokenAPI {
 		if(username.equals("ApiClientApp") && password.equals("secret")) {
 			return true;
 		}
-		// make call to customer service 
+		
 		Customer cust = getCustomerByNameFromCustomerAPI(username);
 		
 		// compare name and password
@@ -124,6 +125,11 @@ public class TokenAPI {
 					output += out;
 				}
 				conn.disconnect();
+				if(output.equals("null")) {
+					return null;
+				} else {
+					System.out.println(output);
+				}
 				return CustomerFactory.getCustomer(output);
 			}
 
