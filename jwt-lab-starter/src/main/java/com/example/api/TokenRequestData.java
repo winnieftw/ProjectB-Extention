@@ -3,13 +3,13 @@ package com.example.api;
 public class TokenRequestData {
 	String username;
 	String password;
-	String scopes;
+//	String scopes;
 	
-	public TokenRequestData(String username, String password, String scopes) {
+	public TokenRequestData(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.scopes = scopes;
+//		this.scopes = scopes;
 	}
 
 	public String getUsername() {
@@ -28,12 +28,12 @@ public class TokenRequestData {
 		this.password = password;
 	}
 	
-	public String getScopes() {
-		return scopes;
-	}
-	
-	public void setScopes(String scopes) {
-		this.scopes = scopes;
-	}	
+//	public String getScopes() {
+//		return scopes;
+//	}
+//	
+//	public void setScopes(String scopes) {
+//		this.scopes = scopes;
+//	}	
 	
 }
